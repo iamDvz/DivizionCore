@@ -11,7 +11,7 @@ plugins {
 
 group = "ru.iamdvz"
 version = "1.0-SNAPSHOT"
-description = "KotlinLib"
+description = "DivizionCore"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
