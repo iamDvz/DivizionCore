@@ -23,7 +23,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
         //implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
-    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
+    //compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
     implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
     shadow("com.elmakers.mine.bukkit:EffectLib:9.4")
 }
