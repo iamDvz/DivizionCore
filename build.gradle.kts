@@ -16,9 +16,9 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenLocal()
+    maven(url = "https://jitpack.io")
     maven(url = "https://oss.sonatype.org/content/groups/public/")
     maven(url = "https://repo.codemc.org/repository/maven-public/")
-    maven(url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
 }
 
 dependencies {
@@ -29,9 +29,9 @@ dependencies {
 //tasks.withType<KotlinCompile> {
 //    kotlinOptions.jvmTarget = "17"
 //}
-tasks.withType<ShadowJar> {
-    archiveFileName.set("DivizionCore-${version}.jar")
-}
+//tasks.withType<ShadowJar> {
+//    archiveFileName.set("DivizionCore-${version}.jar")
+//}
 
 publishing {
     publications.create<MavenPublication>("maven") {
