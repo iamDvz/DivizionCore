@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 
 plugins {
@@ -24,14 +23,20 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
         //implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
-    implementation("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
+    implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
+    shadow("com.elmakers.mine.bukkit:EffectLib:9.4")
 }
 //tasks.withType<KotlinCompile> {
 //    kotlinOptions.jvmTarget = "17"
 //}
-//tasks.withType<ShadowJar> {
-//    archiveFileName.set("DivizionCore-${version}.jar")
-//}
+tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
+    archiveFileName.set("DivizionCore-${version}.jar")
+    relocate("de.slikey", "ru.iamdvz.core.api.shaded.slikey")
+    relocate("kotlin", "ru.iamdvz.core.shaded.kotlin")
+    relocate("org.intellij", "ru.iamdvz.core.shaded.intellij")
+    relocate("org.jetbrains", "ru.iamdvz.core.shaded.jetbrains")
+}
 
 publishing {
     publications.create<MavenPublication>("maven") {
