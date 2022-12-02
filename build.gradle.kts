@@ -24,7 +24,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
         //implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
-    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
+    implementation("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 }
 //tasks.withType<KotlinCompile> {
 //    kotlinOptions.jvmTarget = "17"
