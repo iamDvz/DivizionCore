@@ -1,8 +1,8 @@
-package ru.iamdvz.kotlinlib
+package ru.iamdvz.core
 
 import org.bukkit.plugin.java.JavaPlugin
 
-class KotlinLib : JavaPlugin() {
+class Core : JavaPlugin() {
     override fun onEnable() {
         System.out.println("Hello! Have a good day.")
     }

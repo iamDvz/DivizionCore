@@ -12,7 +12,7 @@ plugins {
 group = "ru.iamdvz"
 version = "1.0-SNAPSHOT"
 description = "KotlinLib"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenLocal()
@@ -23,14 +23,14 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    compileOnly("org.spigotmc:spigot-api:1.12.2-R0.1-SNAPSHOT")
+        //implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
+    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 }
-
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "17"
 }
 tasks.withType<ShadowJar> {
-    archiveFileName.set("KotlinLib-${version}.jar")
+    archiveFileName.set("DivizionCore-${version}.jar")
 }
 
 publishing {
