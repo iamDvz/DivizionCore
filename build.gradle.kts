@@ -26,9 +26,9 @@ dependencies {
         //implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
     compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 }
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
-}
+//tasks.withType<KotlinCompile> {
+//    kotlinOptions.jvmTarget = "17"
+//}
 tasks.withType<ShadowJar> {
     archiveFileName.set("DivizionCore-${version}.jar")
 }
