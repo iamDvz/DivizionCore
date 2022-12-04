@@ -20,6 +20,7 @@ repositories {
     maven(url = "https://repo.codemc.org/repository/maven-public/")
     maven(url = "https://repo.papermc.io/repository/maven-public/")
     maven(url = "https://mvn.lumine.io/repository/maven/")
+    maven(url = "https://repo.extendedclip.com/content/repositories/placeholderapi/")
 }
 
 dependencies {
