@@ -1,7 +1,8 @@
-name: KotlinLib
-version: '${version}'
-main: ru.iamdvz.kotlinlib.KotlinLib
+name: DivizionCore
+version: '${project.version}'
+main: ru.iamdvz.core.Core
+api-version: 1.18
 load: STARTUP
 authors: [iamDvz]
-description: Just add kotlin to minecraft
+description: Simple core for my plugins
 website: iamDvz.ru

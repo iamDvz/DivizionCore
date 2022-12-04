@@ -19,14 +19,21 @@ repositories {
     maven(url = "https://oss.sonatype.org/content/groups/public/")
     maven(url = "https://repo.codemc.org/repository/maven-public/")
     maven(url = "https://repo.papermc.io/repository/maven-public/")
+    maven(url = "https://mvn.lumine.io/repository/maven/")
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation("io.lumine:Mythic-Dist:5.0.1-SNAPSHOT")
+    implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
     shadow(kotlin("stdlib-jdk8"))
     compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
+
     implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
     shadow("com.elmakers.mine.bukkit:EffectLib:9.4")
+
+    implementation("com.ticxo.playeranimator:PlayerAnimator:R1.2.4")
+    shadow("com.ticxo.playeranimator:PlayerAnimator:R1.2.4")
 }
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "17"
@@ -34,9 +41,16 @@ tasks.withType<KotlinCompile> {
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     archiveFileName.set("DivizionCore-${version}.jar")
     relocate("de.slikey", "ru.iamdvz.core.api.shaded.slikey")
+    relocate("com.ticxo", "ru.iamdvz.core.api.shaded")
     //relocate("kotlin", "ru.iamdvz.core.shaded.kotlin")
     relocate("org.intellij", "ru.iamdvz.core.shaded.intellij")
     relocate("org.jetbrains", "ru.iamdvz.core.shaded.jetbrains")
+    relocate("org.apache", "ru.iamdvz.core.shaded.apache")
+}
+tasks.processResources {
+    filesMatching("plugin.yml") {
+        expand(project.properties)
+    }
 }
 
 publishing {
