@@ -23,11 +23,12 @@ repositories {
 }
 
 dependencies {
+    compileOnly("me.clip:placeholderapi:2.11.2")
+    compileOnly("io.lumine:Mythic-Dist:5.0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
     implementation(kotlin("stdlib-jdk8"))
-    implementation("io.lumine:Mythic-Dist:5.0.1-SNAPSHOT")
     implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
     shadow(kotlin("stdlib-jdk8"))
-    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
 
     implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
     shadow("com.elmakers.mine.bukkit:EffectLib:9.4")
