@@ -16,19 +16,23 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 repositories {
     mavenLocal()
     maven(url = "https://jitpack.io")
+    maven(url = "https://mvn.lumine.io/repository/maven/")
+    maven(url = "https://repo.sbdevelopment.tech/releases")
     maven(url = "https://oss.sonatype.org/content/groups/public/")
     maven(url = "https://repo.codemc.org/repository/maven-public/")
     maven(url = "https://repo.papermc.io/repository/maven-public/")
-    maven(url = "https://mvn.lumine.io/repository/maven/")
     maven(url = "https://repo.extendedclip.com/content/repositories/placeholderapi/")
 }
 
 dependencies {
     compileOnly("me.clip:placeholderapi:2.11.2")
     compileOnly("io.lumine:Mythic-Dist:5.0.1-SNAPSHOT")
-    compileOnly("io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
+    compileOnly("nl.sbdeveloper:VehiclesPlus-API:2.3.5")
+    compileOnly("nl.sbdeveloper:VehiclesPlus-Parent:2.3.5")
+    compileOnly("me.clip:placeholderapi:2.11.2")
+
     implementation(kotlin("stdlib-jdk8"))
-    implementation("com.elmakers.mine.bukkit:EffectLib:9.4")
     shadow(kotlin("stdlib-jdk8"))
 
     implementation("com.elmakers.mine.bukkit:EffectLib:9.4")

@@ -1,7 +1,7 @@
 name: DivizionCore
 version: '${project.version}'
-main: ru.iamdvz.core.DivizionCore
-api-version: 1.17
+main: ru.iamdvz.core.Core
+api-version: 1.18
 load: STARTUP
 authors: [iamDvz]
 description: Simple core for my plugins
