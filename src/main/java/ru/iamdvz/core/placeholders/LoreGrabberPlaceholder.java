@@ -1,13 +1,14 @@
 package ru.iamdvz.core.placeholders;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import ru.iamdvz.core.DivizionCore;
+
+import java.util.Objects;
 
 public class LoreGrabberPlaceholder extends PlaceholderExpansion {
     public LoreGrabberPlaceholder(DivizionCore plugin) {
@@ -41,8 +42,8 @@ public class LoreGrabberPlaceholder extends PlaceholderExpansion {
             if (id.substring(id.indexOf(";") + 1, id.indexOf(":")).equalsIgnoreCase("INT")) {
                 int sum = 0;
                 for (ItemStack item : ((Player) p).getInventory().getStorageContents()) {
-                    if (item != null && item.getLore() != null) {
-                        for (String loreline : item.getLore()) {
+                    if (!item.getType().equals(Material.AIR) && item.lore() != null) {
+                        for (String loreline : Objects.requireNonNull(item.getLore())) {
                             if (loreline.contains(id.split(":")[1].replaceAll("\"", ""))) {
                                 try {
                                     sum += (Integer.parseInt(loreline.substring(loreline.indexOf(":") + 1).replace(" ", ""))) * item.getAmount();
@@ -54,6 +55,11 @@ public class LoreGrabberPlaceholder extends PlaceholderExpansion {
                 }
                 return String.valueOf(sum);
             }
+        }
+        return "ERR";
+    }
+}
+
 
         /* TODO DC-lore:SLOT;1,"LORE"
         if (id.split(";")[0].split(":")[1].equals("SLOT")) {
@@ -76,7 +82,3 @@ public class LoreGrabberPlaceholder extends PlaceholderExpansion {
             }
         }
          */
-        }
-        return "ERR";
-    }
-}
