@@ -1,14 +1,12 @@
-package ru.iamdvz.core.utils;
+package ru.iamdvz.core.utils
 
-import ru.iamdvz.core.api.ApiVehiclesPlus;
+import java.util.*
 
-import java.util.UUID;
+class UuidUtil {
+    val instance: UuidUtil
+        get() = this
 
-public class UuidUtil {
-    public UuidUtil getInstance() {
-        return this;
-    }
-    public UUID getUuidByString(String str) {
-        return UUID.fromString(str);
+    fun getUuidByString(str: String?): UUID {
+        return UUID.fromString(str)
     }
 }

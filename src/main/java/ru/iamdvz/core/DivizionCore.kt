@@ -10,15 +10,17 @@ import ru.iamdvz.core.utils.UuidUtil
 
 class DivizionCore : JavaPlugin() {
     override fun onEnable() {
-        System.out.println("Hello! Have a good day.")
+        this.logger.info("Hello! Have a good day.")
         if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            this.logger.info("Enabling LoreGrabberPlaceholder")
             LoreGrabberPlaceholder(this).register();
+            this.logger.info("Enabling NameGrabberPlaceholder")
             NameGrabberPlaceholder(this).register();
         }
     }
 
     override fun onDisable() {
-        System.out.println("Bye-bye!")
+        this.logger.info("Bye-bye!")
     }
 
     fun getVehiclesPlusAPI(): VehiclesPlusAPI{

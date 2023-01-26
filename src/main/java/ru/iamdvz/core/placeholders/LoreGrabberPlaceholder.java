@@ -12,6 +12,7 @@ import java.util.Objects;
 
 public class LoreGrabberPlaceholder extends PlaceholderExpansion {
     public LoreGrabberPlaceholder(DivizionCore plugin) {
+        plugin.getLogger().info("LoreGrabberPlaceholder was enabled!");
     }
 
     @NotNull

@@ -6,6 +6,9 @@ import org.bukkit.entity.Player
 import ru.iamdvz.core.DivizionCore
 
 class NameGrabberPlaceholder(plugin: DivizionCore?) : PlaceholderExpansion() {
+    init {
+        plugin?.logger?.info("NameGrabberPlaceholder was enabled!")
+    }
     override fun getAuthor(): String {
         return "iamDvz"
     }
