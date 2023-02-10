@@ -27,7 +27,7 @@ object ItemsUtil {
                 for (i in 0 until (Objects.requireNonNull(getFrom(item))?.toInt() ?: 1)) {
                     itemListIS.add(ItemStack(Material.AIR))
                 }
-            } else {
+            } else {2
                 itemArgs = getFrom(item)?.let { getParameters(it) }!!
                 itemTemp = ItemStack(Material.valueOf(item.substring(0, item.indexOf("{")).uppercase(Locale.getDefault())))
                 if (itemTemp.type == Material.POTION) { // if item is potion

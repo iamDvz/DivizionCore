@@ -28,9 +28,8 @@ dependencies {
     compileOnly("me.clip:placeholderapi:2.11.2")
     compileOnly("io.lumine:Mythic-Dist:5.0.1-SNAPSHOT")
     compileOnly("io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
-    compileOnly("nl.sbdeveloper:VehiclesPlus-API:2.3.5")
-    compileOnly("nl.sbdeveloper:VehiclesPlus-Parent:2.3.5")
-    compileOnly("me.clip:placeholderapi:2.11.2")
+    compileOnly("nl.sbdeveloper:VehiclesPlus-API:3.0.0-SNAPSHOT")
+    compileOnly("nl.sbdeveloper:VehiclesPlus-Parent:3.0.0-SNAPSHOT")
 
     implementation(kotlin("stdlib-jdk8"))
     shadow(kotlin("stdlib-jdk8"))

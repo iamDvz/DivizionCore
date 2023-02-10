@@ -1,12 +1,15 @@
 package ru.iamdvz.core
 
-import me.legofreak107.vehiclesplus.vehicles.api.VehiclesPlusAPI
+import nl.sbdeveloper.vehiclesplus.VehiclesPlusPluginManager
+import nl.sbdeveloper.vehiclesplus.api.VehiclesPlusAPI
+import nl.sbdeveloper.vehiclesplus.api.vehicles.Vehicle
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import ru.iamdvz.core.api.ApiVehiclesPlus
 import ru.iamdvz.core.placeholders.LoreGrabberPlaceholder
 import ru.iamdvz.core.placeholders.NameGrabberPlaceholder
 import ru.iamdvz.core.utils.UuidUtil
+import java.util.*
 
 class DivizionCore : JavaPlugin() {
     override fun onEnable() {
@@ -23,13 +26,7 @@ class DivizionCore : JavaPlugin() {
         this.logger.info("Bye-bye!")
     }
 
-    fun getVehiclesPlusAPI(): VehiclesPlusAPI{
-        return VehiclesPlusAPI.getInstance()
-    }
-    fun getApiVehiclesPlus(): ApiVehiclesPlus {
-        return ApiVehiclesPlus().instance
-    }
-    fun getUuidUtil(): UuidUtil {
-        return UuidUtil().instance
-    }
+    //fun getVehiclesPlusAPI(): MutableMap<UUID, Vehicle>? = VehiclesPlusAPI.getVehicles();
+    fun getApiVehiclesPlus(): ApiVehiclesPlus = ApiVehiclesPlus().instance
+    fun getUuidUtil(): UuidUtil = UuidUtil().instance
 }
